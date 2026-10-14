@@ -10,6 +10,8 @@ const PEDIDO_URL = 'https://pedido.anota.ai/loja/deck-steakhouse';
 const WHATS = '/ir/whatsapp/';
 // Link oficial "Pedir avaliacoes" do Perfil da Empresa no Google.
 const AVALIAR_URL = 'https://g.page/r/CVUWUFq9OJ-pEBM/review';
+const MAPA = '/ir/mapa/';
+const MAPA_URL = 'https://maps.google.com/?cid=12222550299621987925';
 const WHATS_URL = 'https://wa.me/5574988712181';
 const INSTA = 'https://www.instagram.com/decksteakhouse/';
 const HOJE = '2026-10-13';
@@ -133,11 +135,11 @@ function fotos(lista) {
 }
 function chamada(titulo, texto) {
   return '<section class="chamada">\n        <div><h2 class="display">' + titulo + '</h2><p>' + esc(texto) + '</p></div>\n' +
-    '        <div class="cta-row"><a class="btn" href="' + WHATS + '" target="_blank" rel="noopener">Reservar pelo WhatsApp</a><a class="btn ghost" href="' + PEDIDO + '" target="_blank" rel="noopener">Fazer pedido</a></div>\n      </section>';
+    '        <div class="cta-row"><a class="btn" href="' + PEDIDO + '" target="_blank" rel="noopener">Fazer pedido</a><a class="btn ghost" href="' + MAPA + '" target="_blank" rel="noopener">Como chegar</a></div>\n      </section>';
 }
 function mais(atual) {
   const cards = PAGINAS.filter(p => p.slug !== atual).map(p => '        <a href="/' + p.slug + '/"><strong>' + esc(p.titulo) + '</strong><span>' + esc(p.resumo) + '</span></a>');
-  cards.push('        <a href="/"><strong>Conheça o Deck</strong><span>A casa, a mesa e a reserva.</span></a>');
+  cards.push('        <a href="/"><strong>Conheça o Deck</strong><span>A casa, a mesa e como chegar.</span></a>');
   return '<section class="bloco">\n      <h2 class="display">Continue por aqui</h2>\n      <div class="mais">\n' + cards.join('\n') + '\n      </div>\n    </section>';
 }
 
@@ -183,8 +185,7 @@ function pagina(p) {
   </ul>
   <div class="nav-cta">
     <a class="wa" href="${WHATS}" target="_blank" rel="noopener" aria-label="Falar com o Deck no WhatsApp">${WA_ICON}</a>
-    <a class="btn ghost" href="${PEDIDO}" target="_blank" rel="noopener">Fazer pedido</a>
-    <a class="btn" href="/#reserva">Reservar</a>
+    <a class="btn" href="${PEDIDO}" target="_blank" rel="noopener">Fazer pedido</a>
   </div>
 </nav>
 <div class="subnav" aria-label="Páginas">
@@ -244,10 +245,10 @@ const paginas = [];
 paginas.push({
   slug: 'carnes-em-jacobina', migalha: 'Carnes',
   title: 'Carnes em Jacobina: Picanha, Bife Ancho e Angus | Deck Steakhouse',
-  description: 'Steakhouse em Jacobina, BA. Picanha Grill, Bife Ancho de 520g, Baby Beef e Maminha Angus, mais a Ribbs BBQ assada lentamente. Reserve sua mesa pelo WhatsApp.',
+  description: 'Steakhouse em Jacobina, BA. Picanha Grill, Bife Ancho de 520g, Baby Beef e Maminha Angus, mais a Ribbs BBQ assada lentamente. Aberto todos os dias, das 18h à meia-noite.',
   eyebrow: 'Steakhouse em Jacobina, Bahia', h1: 'Carnes em Jacobina, <em>no ponto que você pedir.</em>',
   lede: 'O Deck é uma steakhouse em Jacobina, Bahia. Cortes nobres preparados na grelha, servidos no ferro quente e pensados para dividir com a mesa inteira.',
-  cta1: ['Reservar pelo WhatsApp', WHATS], cta2: ['Ver cardápio completo', '/cardapio/'],
+  cta1: ['Fazer pedido', PEDIDO], cta2: ['Ver cardápio completo', '/cardapio/'],
   foto: ['bife-ancho.jpg', 'Bife Ancho fatiado na chapa de ferro, com fritas e pão de alho ao fundo'], ogimg: 'og.jpg',
   corpo: `<section class="bloco">
       <h2 class="display">Os cortes da casa</h2>
@@ -269,10 +270,10 @@ paginas.push({
     <section class="bloco prosa">
       <h2 class="display">Como é comer carne no Deck</h2>
       <p>A casa junta a tradição das steakhouses americanas com o jeito baiano de receber. A carne vem fatiada no ferro quente, para a mesa inteira se servir, e os acompanhamentos chegam em volta.</p>
-      <p>O Deck fica na R. José Prado Alves, 1, no bairro Félix Tomaz, em Jacobina, e abre todos os dias, das 18h à meia-noite. Para grupos e comemorações, vale reservar pelo WhatsApp com antecedência. Quem vem com criança conta com o Espaço Kids e com o Menu Kids.</p>
+      <p>O Deck fica na R. José Prado Alves, 1, no bairro Félix Tomaz, em Jacobina, e abre todos os dias, das 18h à meia-noite. Não é preciso reservar: é só chegar, sozinho, a dois ou com a turma toda. Quem vem com criança conta com o Espaço Kids e com o Menu Kids.</p>
       <p>Prefere um lanche? Veja os <a href="/hamburguer-em-jacobina/">hambúrgueres do Deck</a> ou o <a href="/cardapio/">cardápio completo</a>.</p>
     </section>
-    ${chamada('Sua mesa <em>está posta.</em>', 'Reservas das 18h30 às 23h pelo WhatsApp. Se preferir comer em casa, peça pelo cardápio online.')}`,
+    ${chamada('É só <em>chegar.</em>', 'Aberto todos os dias, das 18h à meia-noite, sem reserva. Se preferir comer em casa, peça pelo cardápio online.')}`,
 });
 
 paginas.push({
@@ -281,7 +282,7 @@ paginas.push({
   description: 'Onze hambúrgueres em Jacobina, BA: smash burgers, burgers de 160g, bacon, cheddar e nacho cheese no pão brioche. Coma no Deck Steakhouse ou peça online.',
   eyebrow: 'Hamburgueria e steakhouse em Jacobina', h1: 'Hambúrguer em Jacobina, <em>do smash ao de 160g.</em>',
   lede: 'Os Deck\'s Burgers são onze receitas da casa, com smash burgers selados na chapa, queijos que escorrem e pães brioche, australiano e de batata.',
-  cta1: ['Pedir hambúrguer online', PEDIDO], cta2: ['Reservar mesa', WHATS],
+  cta1: ['Pedir hambúrguer online', PEDIDO], cta2: ['Como chegar', MAPA],
   foto: ['cheeseburger.jpg', 'Deluxe Smash Burger com dois smash burgers, nacho cheese e bacon crispy no pão brioche'], ogimg: 'cheeseburger.jpg',
   corpo: `<section class="bloco">
       <h2 class="display">Deck's Burgers</h2>
@@ -305,7 +306,7 @@ paginas.push({
       <p>Para a turma, o hambúrguer combina com uma porção de nachos no meio da mesa e uma rodada de drinks. Para a família, tem Espaço Kids e o Kids Smash Burger no Menu Kids.</p>
       <p>Quer algo além do hambúrguer? Conheça as <a href="/carnes-em-jacobina/">carnes do Deck</a> ou veja o <a href="/cardapio/">cardápio completo</a>.</p>
     </section>
-    ${chamada('Bateu a fome <em>de hambúrguer?</em>', 'Peça online ou venha comer no Deck. Reservas das 18h30 às 23h pelo WhatsApp.')}`,
+    ${chamada('Bateu a fome <em>de hambúrguer?</em>', 'Peça online ou venha comer no Deck. Aberto todos os dias, das 18h à meia-noite.')}`,
 });
 
 paginas.push({
@@ -314,7 +315,7 @@ paginas.push({
   description: 'Cardápio completo do Deck Steakhouse, restaurante em Jacobina: carnes, hambúrgueres, tacos, burritos, quesadillas, petiscos, menu kids, sobremesas e drinks.',
   eyebrow: 'Restaurante em Jacobina, Bahia', h1: 'Cardápio <em>do Deck.</em>',
   lede: 'Tudo o que a casa serve: steaks, hambúrgueres, comida mexicana, petiscos para dividir, menu kids, sobremesas e drinks. Os preços e o pedido ficam no cardápio online.',
-  cta1: ['Ver preços e pedir', PEDIDO], cta2: ['Reservar mesa', WHATS],
+  cta1: ['Ver preços e pedir', PEDIDO], cta2: ['Como chegar', MAPA],
   foto: ['nachos.jpg', 'Nachos com chili beans, nacho cheese, sour cream, guacamole e jalapeño'], ogimg: 'og.jpg',
   ld: [{
     '@context': 'https://schema.org', '@type': 'Menu', name: 'Cardápio do Deck Steakhouse', url: DOMINIO + '/cardapio/', inLanguage: 'pt-BR',
@@ -331,7 +332,7 @@ paginas.push({
       ${s.sub ? '<p class="sub">' + esc(s.sub) + '</p>' : ''}
       ${listaItens(s.itens)}
     </section>`).join('\n    ')}
-    ${chamada('Escolheu? <em>Agora é pedir.</em>', 'Os preços atualizados estão no cardápio online. Para comer na casa, reserve pelo WhatsApp das 18h30 às 23h.')}`,
+    ${chamada('Escolheu? <em>Agora é pedir.</em>', 'Os preços atualizados estão no cardápio online. Para comer na casa, é só chegar: abrimos todos os dias, das 18h à meia-noite.')}`,
 });
 
 paginas.push({
@@ -340,7 +341,7 @@ paginas.push({
   description: 'O que fazer em Jacobina, BA: do pôr do sol no Alto do Cruzeiro ao jantar com drinks. Um roteiro para a noite em Jacobina, a dois, em família ou com amigos.',
   eyebrow: 'Guia da noite em Jacobina', h1: 'O que fazer em Jacobina <em>à noite.</em>',
   lede: 'Jacobina é conhecida pelas serras e cachoeiras. Quando o sol se põe, a cidade troca a trilha pela mesa. Este é um roteiro simples para aproveitar a noite, feito por quem vive a noite da cidade.',
-  cta1: ['Reservar mesa no Deck', WHATS], cta2: ['Ver cardápio', '/cardapio/'],
+  cta1: ['Como chegar ao Deck', MAPA], cta2: ['Ver cardápio', '/cardapio/'],
   foto: ['brinde.jpg', 'Amigas brindando com chope e milkshake em uma mesa do Deck, em Jacobina'], ogimg: 'brinde.jpg',
   ld: [{
     '@context': 'https://schema.org', '@type': 'Article', headline: 'O que fazer em Jacobina à noite', inLanguage: 'pt-BR',
@@ -369,17 +370,17 @@ paginas.push({
         ['A dois', 'Um corte para dividir e uma sobremesa no final, como a Dobradilla de Nutella.'],
         ['Em família', 'Chegue cedo. As crianças têm o Espaço Kids para brincar e o Menu Kids, e os adultos jantam com calma.'],
         ['Com os amigos', 'Hambúrguer, Deck Mix no meio da mesa e uma rodada de drinks. Ninguém olha o relógio.'],
-        ['Para comemorar', 'Aniversário ou reencontro pedem reserva. Avise pelo WhatsApp quantos vêm e o horário.'],
+        ['Para comemorar', 'Aniversário ou reencontro: junte a turma, peça um Deck Mix para o meio da mesa e brinde na varanda.'],
       ])}
       ${fotos([['varanda.jpg', 'Amigas conversando com drinks na varanda do Deck à noite, em Jacobina', 'Varanda'], ['familia.jpg', 'Pai e filho pequeno no Deck', 'Em família'], ['gin-morango.jpg', 'Gin Tônica de Morango com hortelã', 'Gin Tônica de Morango']])}
     </section>
     <section class="bloco prosa">
       <h2 class="display">Informações para planejar</h2>
-      <p>O Deck Steakhouse fica na R. José Prado Alves, 1, no bairro Félix Tomaz. Abre todos os dias, das 18h à meia-noite. As reservas são feitas pelo WhatsApp (74) 98871-2181, para horários entre 18h30 e 23h.</p>
+      <p>O Deck Steakhouse fica na R. José Prado Alves, 1, no bairro Félix Tomaz. Abre todos os dias, das 18h à meia-noite, e não é preciso reservar: é só chegar. Dúvidas pelo WhatsApp (74) 98871-2181.</p>
       <figure class="fachada"><img src="/assets/fachada.jpg" width="1600" height="900" loading="lazy" alt="Fachada do Deck Steakhouse à noite, com a varanda de madeira iluminada"><figcaption>A fachada do Deck à noite, na R. José Prado Alves, 1</figcaption></figure>
       <p>Se a noite pedir sofá, o <a href="${PEDIDO}" target="_blank" rel="noopener">cardápio online</a> recebe pedidos, e o <a href="/cardapio/">cardápio completo</a> está aqui no site.</p>
     </section>
-    ${chamada('A noite em Jacobina <em>começa aqui.</em>', 'Reserve sua mesa pelo WhatsApp e chegue com fome.')}`,
+    ${chamada('A noite em Jacobina <em>começa aqui.</em>', 'Abrimos todos os dias, das 18h à meia-noite. É só chegar com fome.')}`,
 });
 
 /* ---------- gravacao ---------- */
@@ -397,7 +398,7 @@ fs.writeFileSync(path.join(SITE, 'sitemap.xml'),
 console.log('robots.txt e sitemap.xml com ' + urls.length + ' enderecos');
 
 /* ---------- paginas de passagem que contam os cliques ---------- */
-// Cada clique em WhatsApp, reserva ou pedido passa por /ir/..., que conta uma visita na Vercel e segue para o destino.
+// Cada clique em WhatsApp, pedido ou mapa passa por /ir/..., que conta uma visita na Vercel e segue para o destino.
 function passagem(destinoJs, titulo) {
   return '<!doctype html>\n<html lang="pt-BR">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="robots" content="noindex, nofollow">\n<title>' + titulo + ' | Deck Steakhouse</title>\n' +
     '<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b0908;color:#E5D3B3;font:500 17px/1.5 system-ui,sans-serif;text-align:center}a{color:#D2A54A}</style>\n' +
@@ -410,7 +411,7 @@ function passagem(destinoJs, titulo) {
 const PASSAGENS = {
   whatsapp: [JSON.stringify(WHATS_URL), 'o WhatsApp do Deck'],
   pedido: [JSON.stringify(PEDIDO_URL), 'o cardápio online'],
-  reserva: ['(function(){var m="";try{m=localStorage.getItem("deck-reserva")||"";localStorage.removeItem("deck-reserva");}catch(e){}return ' + JSON.stringify(WHATS_URL) + '+(m?"?text="+encodeURIComponent(m):"");})()', 'a sua reserva no WhatsApp'],
+  mapa: [JSON.stringify(MAPA_URL), 'o mapa até o Deck'],
 };
 for (const [nome, [destino, titulo]] of Object.entries(PASSAGENS)) {
   const dir = path.join(SITE, 'ir', nome);
@@ -420,7 +421,7 @@ for (const [nome, [destino, titulo]] of Object.entries(PASSAGENS)) {
 // endereco curto do QR Code das mesas (ja impresso: nunca mude o caminho /avaliar/)
 fs.mkdirSync(path.join(SITE, 'avaliar'), { recursive: true });
 fs.writeFileSync(path.join(SITE, 'avaliar', 'index.html'), passagem(JSON.stringify(AVALIAR_URL), 'a avaliação do Deck no Google'), 'utf8');
-console.log('passagens /ir/whatsapp/, /ir/pedido/, /ir/reserva/ e /avaliar/');
+console.log('passagens /ir/whatsapp/, /ir/pedido/, /ir/mapa/ e /avaliar/');
 
 // deixa as fotos leves (WebP) em todas as paginas
 require('./otimizar-imagens.js');

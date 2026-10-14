@@ -9,7 +9,7 @@ Site estático em HTML, CSS e JavaScript puros, sem framework e sem etapa de bui
 | Caminho | O que é |
 |---|---|
 | `deck-site/` | O site pronto para publicar. É esta pasta que vai para a hospedagem. |
-| `deck-site/index.html` | Página principal, com o topo animado pelo scroll, seções, perguntas frequentes e reserva pelo WhatsApp. |
+| `deck-site/index.html` | Página principal, com o topo animado pelo scroll, seções, perguntas frequentes e a seção "Venha para o Deck" (sem reserva: é só chegar). |
 | `deck-site/carnes-em-jacobina/`, `hamburguer-em-jacobina/`, `cardapio/`, `o-que-fazer-em-jacobina-a-noite/` | Páginas internas, geradas pelo `gerar-paginas.js`. |
 | `deck-site/assets/` | Fotos, vídeo, logotipo e o estilo das páginas internas. |
 | `deck-site/robots.txt`, `deck-site/sitemap.xml` | Arquivos para os buscadores. |
@@ -39,12 +39,12 @@ Suba o conteúdo de `deck-site/` para a raiz pública da hospedagem. O site est�
 
 ## Medição de visitas e cliques
 
-O site usa o Web Analytics da Vercel (sem cookies). Os botões de WhatsApp, reserva e pedido passam por páginas de passagem, que contam o clique e seguem na hora para o destino:
+O site usa o Web Analytics da Vercel (sem cookies). Os botões de WhatsApp, pedido e "Como chegar" passam por páginas de passagem, que contam o clique e seguem na hora para o destino:
 
 | Página | Conta | Leva para |
 |---|---|---|
 | `/ir/whatsapp/` | cliques no WhatsApp | conversa com o Deck |
-| `/ir/reserva/` | reservas enviadas pelo formulário | WhatsApp com a mensagem da reserva pronta |
+| `/ir/mapa/` | cliques em como chegar | ficha do Deck no Google Maps |
 | `/ir/pedido/` | cliques em fazer pedido | cardápio online (Anota AI) |
 
 No painel da Vercel, em Analytics, essas três páginas mostram quantas vezes cada botão foi usado. Elas ficam fora do Google (`noindex` e `robots.txt`).
