@@ -77,6 +77,13 @@ ul,ol{list-style:none}
 .fotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(10px,1.4vw,20px);margin-top:28px}
 .fotos figure{position:relative;border-radius:3px;overflow:hidden;background:var(--panel)}
 .fotos img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.prosa .fotos{margin:6px 0 1.4em}
+.fotos.altas{grid-template-columns:repeat(3,minmax(0,1fr))}
+.fotos.altas img{aspect-ratio:4/5}
+@media (max-width:520px){.fotos.altas{grid-template-columns:1fr 1fr}.fotos.altas figure:first-child{grid-column:1 / -1}.fotos.altas figure:first-child img{aspect-ratio:4/3}}
+.fachada{margin:8px 0 1.3em;border-radius:4px;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 24px 60px rgba(0,0,0,.45)}
+.fachada img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.fachada figcaption{padding:12px 16px;background:var(--panel);font-size:.85rem;color:var(--text-secondary)}
 .fotos figcaption{position:absolute;left:0;right:0;bottom:0;padding:46px 14px 12px;background:linear-gradient(transparent,rgba(5,4,3,.88));font-family:var(--display);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cebola)}
 
 .indice{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}

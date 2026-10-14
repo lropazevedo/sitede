@@ -11,3 +11,7 @@ node_modules/
 # As imagens e o video do site entram normalmente
 !deck-site/**/*.jpg
 !deck-site/**/*.mp4
+
+# Imagens soltas na raiz (capturas e originais)
+/*.png
+/*.webp
