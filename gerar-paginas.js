@@ -6,7 +6,7 @@ const path = require('path');
 const SITE = path.join(__dirname, 'deck-site');
 const DOMINIO = 'https://www.decksteakhouse.com.br';
 const PEDIDO = 'https://pedido.anota.ai/loja/deck-steakhouse';
-const WHATS = 'https://wa.me/557488712181';
+const WHATS = 'https://wa.me/5574988712181';
 const INSTA = 'https://www.instagram.com/decksteakhouse/';
 const HOJE = '2026-10-13';
 
@@ -214,7 +214,7 @@ function pagina(p) {
       R. José Prado Alves, 1, Félix Tomaz<br>
       Jacobina, Bahia<br>
       Todos os dias, das 18h à meia-noite<br>
-      WhatsApp <a href="${WHATS}" target="_blank" rel="noopener">(74) 8871-2181</a><br>
+      WhatsApp <a href="${WHATS}" target="_blank" rel="noopener">(74) 98871-2181</a><br>
       <a href="${INSTA}" target="_blank" rel="noopener">@decksteakhouse</a>
     </address>
     <nav aria-label="Páginas do site">
@@ -369,7 +369,7 @@ paginas.push({
     </section>
     <section class="bloco prosa">
       <h2 class="display">Informações para planejar</h2>
-      <p>O Deck Steakhouse fica na R. José Prado Alves, 1, no bairro Félix Tomaz. Abre todos os dias, das 18h à meia-noite. As reservas são feitas pelo WhatsApp (74) 8871-2181, para horários entre 18h30 e 23h.</p>
+      <p>O Deck Steakhouse fica na R. José Prado Alves, 1, no bairro Félix Tomaz. Abre todos os dias, das 18h à meia-noite. As reservas são feitas pelo WhatsApp (74) 98871-2181, para horários entre 18h30 e 23h.</p>
       <figure class="fachada"><img src="/assets/fachada.jpg" width="1600" height="900" loading="lazy" alt="Fachada do Deck Steakhouse à noite, com a varanda de madeira iluminada"><figcaption>A fachada do Deck à noite, na R. José Prado Alves, 1</figcaption></figure>
       <p>Se a noite pedir sofá, o <a href="${PEDIDO}" target="_blank" rel="noopener">cardápio online</a> recebe pedidos, e o <a href="/cardapio/">cardápio completo</a> está aqui no site.</p>
     </section>
