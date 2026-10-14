@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /ir/
 
 Sitemap: https://www.decksteakhouse.com.br/sitemap.xml

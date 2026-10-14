@@ -36,3 +36,15 @@ Ele já roda o `otimizar-imagens.js` no final. Se trocar ou adicionar uma foto e
 ## Publicar
 
 Suba o conteúdo de `deck-site/` para a raiz pública da hospedagem. O site está preparado para o domínio `https://www.decksteakhouse.com.br` (endereço canônico, sitemap e prévias de link).
+
+## Medição de visitas e cliques
+
+O site usa o Web Analytics da Vercel (sem cookies). Os botões de WhatsApp, reserva e pedido passam por páginas de passagem, que contam o clique e seguem na hora para o destino:
+
+| Página | Conta | Leva para |
+|---|---|---|
+| `/ir/whatsapp/` | cliques no WhatsApp | conversa com o Deck |
+| `/ir/reserva/` | reservas enviadas pelo formulário | WhatsApp com a mensagem da reserva pronta |
+| `/ir/pedido/` | cliques em fazer pedido | cardápio online (Anota AI) |
+
+No painel da Vercel, em Analytics, essas três páginas mostram quantas vezes cada botão foi usado. Elas ficam fora do Google (`noindex` e `robots.txt`).

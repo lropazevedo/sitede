@@ -5,8 +5,10 @@ const path = require('path');
 
 const SITE = path.join(__dirname, 'deck-site');
 const DOMINIO = 'https://www.decksteakhouse.com.br';
-const PEDIDO = 'https://pedido.anota.ai/loja/deck-steakhouse';
-const WHATS = 'https://wa.me/5574988712181';
+const PEDIDO = '/ir/pedido/';
+const PEDIDO_URL = 'https://pedido.anota.ai/loja/deck-steakhouse';
+const WHATS = '/ir/whatsapp/';
+const WHATS_URL = 'https://wa.me/5574988712181';
 const INSTA = 'https://www.instagram.com/decksteakhouse/';
 const HOJE = '2026-10-13';
 
@@ -167,6 +169,8 @@ function pagina(p) {
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@1,500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/paginas.css">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Pular para o conteúdo</a>
@@ -194,7 +198,7 @@ function pagina(p) {
         <p class="eyebrow">${esc(p.eyebrow)}</p>
         <h1 class="display">${p.h1}</h1>
         <p class="lede">${esc(p.lede)}</p>
-        <div class="cta-row"><a class="btn" href="${p.cta1[1]}"${/^http/.test(p.cta1[1]) ? ' target="_blank" rel="noopener"' : ''}>${esc(p.cta1[0])}</a><a class="btn ghost" href="${p.cta2[1]}"${/^http/.test(p.cta2[1]) ? ' target="_blank" rel="noopener"' : ''}>${esc(p.cta2[0])}</a></div>
+        <div class="cta-row"><a class="btn" href="${p.cta1[1]}"${/^(http|\/ir\/)/.test(p.cta1[1]) ? ' target="_blank" rel="noopener"' : ''}>${esc(p.cta1[0])}</a><a class="btn ghost" href="${p.cta2[1]}"${/^(http|\/ir\/)/.test(p.cta2[1]) ? ' target="_blank" rel="noopener"' : ''}>${esc(p.cta2[0])}</a></div>
       </div>
       <figure><img src="/assets/${p.foto[0]}" width="1600" height="1066" alt="${esc(p.foto[1])}" fetchpriority="high"></figure>
     </header>
@@ -383,12 +387,35 @@ for (const p of paginas) {
   fs.writeFileSync(path.join(dir, 'index.html'), pagina(p), 'utf8');
   console.log('pagina  /' + p.slug + '/');
 }
-fs.writeFileSync(path.join(SITE, 'robots.txt'), 'User-agent: *\nAllow: /\n\nSitemap: ' + DOMINIO + '/sitemap.xml\n', 'utf8');
+fs.writeFileSync(path.join(SITE, 'robots.txt'), 'User-agent: *\nAllow: /\nDisallow: /ir/\n\nSitemap: ' + DOMINIO + '/sitemap.xml\n', 'utf8');
 const urls = ['/'].concat(paginas.map(p => '/' + p.slug + '/'));
 fs.writeFileSync(path.join(SITE, 'sitemap.xml'),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   urls.map(u => '  <url><loc>' + DOMINIO + u + '</loc><lastmod>' + HOJE + '</lastmod></url>').join('\n') + '\n</urlset>\n', 'utf8');
 console.log('robots.txt e sitemap.xml com ' + urls.length + ' enderecos');
+
+/* ---------- paginas de passagem que contam os cliques ---------- */
+// Cada clique em WhatsApp, reserva ou pedido passa por /ir/..., que conta uma visita na Vercel e segue para o destino.
+function passagem(destinoJs, titulo) {
+  return '<!doctype html>\n<html lang="pt-BR">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="robots" content="noindex, nofollow">\n<title>' + titulo + ' | Deck Steakhouse</title>\n' +
+    '<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b0908;color:#E5D3B3;font:500 17px/1.5 system-ui,sans-serif;text-align:center}a{color:#D2A54A}</style>\n' +
+    '<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>\n<script defer src="/_vercel/insights/script.js"></script>\n' +
+    '</head>\n<body>\n<p>Abrindo ' + titulo + '...<br><a id="ir" href="#">Toque aqui se não abrir</a></p>\n<script>\n' +
+    '(function(){var destino=' + destinoJs + ';document.getElementById("ir").href=destino;var foi=false;function ir(){if(foi)return;foi=true;location.replace(destino);}\n' +
+    'var s=document.querySelector(\'script[src*="insights"]\');if(s){s.addEventListener("load",function(){setTimeout(ir,500);});s.addEventListener("error",ir);}setTimeout(ir,1500);})();\n' +
+    '</script>\n</body>\n</html>\n';
+}
+const PASSAGENS = {
+  whatsapp: [JSON.stringify(WHATS_URL), 'o WhatsApp do Deck'],
+  pedido: [JSON.stringify(PEDIDO_URL), 'o cardápio online'],
+  reserva: ['(function(){var m="";try{m=localStorage.getItem("deck-reserva")||"";localStorage.removeItem("deck-reserva");}catch(e){}return ' + JSON.stringify(WHATS_URL) + '+(m?"?text="+encodeURIComponent(m):"");})()', 'a sua reserva no WhatsApp'],
+};
+for (const [nome, [destino, titulo]] of Object.entries(PASSAGENS)) {
+  const dir = path.join(SITE, 'ir', nome);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), passagem(destino, titulo), 'utf8');
+}
+console.log('passagens /ir/whatsapp/, /ir/pedido/ e /ir/reserva/');
 
 // deixa as fotos leves (WebP) em todas as paginas
 require('./otimizar-imagens.js');
