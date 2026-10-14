@@ -15,3 +15,6 @@ node_modules/
 # Imagens soltas na raiz (capturas e originais)
 /*.png
 /*.webp
+
+# Saidas geradas do cartao de mesa
+impressos/*.html

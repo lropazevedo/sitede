@@ -8,6 +8,8 @@ const DOMINIO = 'https://www.decksteakhouse.com.br';
 const PEDIDO = '/ir/pedido/';
 const PEDIDO_URL = 'https://pedido.anota.ai/loja/deck-steakhouse';
 const WHATS = '/ir/whatsapp/';
+// Link de avaliacao no Google. Troque pelo link oficial "Pedir avaliacoes" do Perfil da Empresa quando tiver.
+const AVALIAR_URL = 'https://maps.google.com/?cid=12222550299621987925';
 const WHATS_URL = 'https://wa.me/5574988712181';
 const INSTA = 'https://www.instagram.com/decksteakhouse/';
 const HOJE = '2026-10-13';
@@ -387,7 +389,7 @@ for (const p of paginas) {
   fs.writeFileSync(path.join(dir, 'index.html'), pagina(p), 'utf8');
   console.log('pagina  /' + p.slug + '/');
 }
-fs.writeFileSync(path.join(SITE, 'robots.txt'), 'User-agent: *\nAllow: /\nDisallow: /ir/\n\nSitemap: ' + DOMINIO + '/sitemap.xml\n', 'utf8');
+fs.writeFileSync(path.join(SITE, 'robots.txt'), 'User-agent: *\nAllow: /\nDisallow: /ir/\nDisallow: /avaliar/\n\nSitemap: ' + DOMINIO + '/sitemap.xml\n', 'utf8');
 const urls = ['/'].concat(paginas.map(p => '/' + p.slug + '/'));
 fs.writeFileSync(path.join(SITE, 'sitemap.xml'),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
@@ -415,7 +417,10 @@ for (const [nome, [destino, titulo]] of Object.entries(PASSAGENS)) {
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), passagem(destino, titulo), 'utf8');
 }
-console.log('passagens /ir/whatsapp/, /ir/pedido/ e /ir/reserva/');
+// endereco curto do QR Code das mesas (ja impresso: nunca mude o caminho /avaliar/)
+fs.mkdirSync(path.join(SITE, 'avaliar'), { recursive: true });
+fs.writeFileSync(path.join(SITE, 'avaliar', 'index.html'), passagem(JSON.stringify(AVALIAR_URL), 'a avaliação do Deck no Google'), 'utf8');
+console.log('passagens /ir/whatsapp/, /ir/pedido/, /ir/reserva/ e /avaliar/');
 
 // deixa as fotos leves (WebP) em todas as paginas
 require('./otimizar-imagens.js');
