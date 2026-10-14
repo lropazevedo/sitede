@@ -1,0 +1,13 @@
+# Materiais de origem e arquivos de trabalho que nao vao para o repositorio
+*.jpg
+*.mp4
+*.pdf
+*.zip
+review/
+hostgator.env
+*.env
+node_modules/
+
+# As imagens e o video do site entram normalmente
+!deck-site/**/*.jpg
+!deck-site/**/*.mp4
