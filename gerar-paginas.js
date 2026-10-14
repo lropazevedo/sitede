@@ -8,8 +8,8 @@ const DOMINIO = 'https://www.decksteakhouse.com.br';
 const PEDIDO = '/ir/pedido/';
 const PEDIDO_URL = 'https://pedido.anota.ai/loja/deck-steakhouse';
 const WHATS = '/ir/whatsapp/';
-// Link de avaliacao no Google. Troque pelo link oficial "Pedir avaliacoes" do Perfil da Empresa quando tiver.
-const AVALIAR_URL = 'https://maps.google.com/?cid=12222550299621987925';
+// Link oficial "Pedir avaliacoes" do Perfil da Empresa no Google.
+const AVALIAR_URL = 'https://g.page/r/CVUWUFq9OJ-pEBM/review';
 const WHATS_URL = 'https://wa.me/5574988712181';
 const INSTA = 'https://www.instagram.com/decksteakhouse/';
 const HOJE = '2026-10-13';
