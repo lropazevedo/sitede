@@ -12,6 +12,7 @@ html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-
 body{margin:0;overflow-x:hidden;overflow-x:clip;background:var(--canvas);color:var(--text-primary);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
   background-image:radial-gradient(ellipse 60% 40% at 20% 0%,rgba(74,46,31,.45),transparent 70%),radial-gradient(ellipse 50% 30% at 90% 60%,rgba(210,165,74,.06),transparent 70%);background-attachment:fixed}
 img{display:block;max-width:100%;height:auto}
+picture{display:contents}
 a{color:inherit}
 h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0;padding:0}
 ul,ol{list-style:none}
@@ -71,7 +72,7 @@ ul,ol{list-style:none}
 .itens{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:0 clamp(24px,4vw,56px)}
 .itens li{padding:18px 0;border-bottom:1px solid var(--line)}
 .itens h3{font-family:var(--display);font-weight:600;font-size:.98rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-primary)}
-.itens h3 small{font-family:var(--body);font-weight:500;font-size:.78rem;letter-spacing:.04em;text-transform:none;color:var(--accent);margin-left:.5em;white-space:nowrap}
+.itens h3 small{font-family:var(--body);font-weight:600;font-size:.78rem;letter-spacing:.04em;text-transform:none;color:var(--accent);margin-left:.5em;white-space:nowrap}
 .itens p{color:var(--text-secondary);font-size:.95rem;margin-top:4px}
 
 .fotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(10px,1.4vw,20px);margin-top:28px}

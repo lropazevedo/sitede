@@ -164,7 +164,7 @@ function pagina(p) {
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0908'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' font-weight='700' text-anchor='middle' fill='%23D2A54A'%3ED%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@1,500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/paginas.css">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>
@@ -389,3 +389,6 @@ fs.writeFileSync(path.join(SITE, 'sitemap.xml'),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   urls.map(u => '  <url><loc>' + DOMINIO + u + '</loc><lastmod>' + HOJE + '</lastmod></url>').join('\n') + '\n</urlset>\n', 'utf8');
 console.log('robots.txt e sitemap.xml com ' + urls.length + ' enderecos');
+
+// deixa as fotos leves (WebP) em todas as paginas
+require('./otimizar-imagens.js');

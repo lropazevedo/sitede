@@ -17,7 +17,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0908'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' font-weight='700' text-anchor='middle' fill='%23D2A54A'%3ED%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@1,500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Restaurant","@id":"https://www.decksteakhouse.com.br/#restaurante","name":"Deck Steakhouse","slogan":"A alegria está aqui","url":"https://www.decksteakhouse.com.br/","image":["https://www.decksteakhouse.com.br/assets/og.jpg","https://www.decksteakhouse.com.br/assets/picanha.jpg","https://www.decksteakhouse.com.br/assets/brinde.jpg"],"logo":"https://www.decksteakhouse.com.br/assets/logo-deck.png","description":"Restaurante e steakhouse em Jacobina, Bahia, com carnes, hambúrgueres, comida mexicana e drinks.","telephone":"+55 74 98871-2181","address":{"@type":"PostalAddress","streetAddress":"R. José Prado Alves, 1, Félix Tomaz","addressLocality":"Jacobina","addressRegion":"BA","addressCountry":"BR"},"servesCuisine":["Steakhouse","Carnes","Hambúrguer","Mexicana","Americana"],"hasMenu":"https://www.decksteakhouse.com.br/cardapio/","acceptsReservations":"True","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Espaço Kids","value":true}],"potentialAction":{"@type":"OrderAction","target":"https://pedido.anota.ai/loja/deck-steakhouse"},"sameAs":["https://www.instagram.com/decksteakhouse/"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"18:00","closes":"00:00"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Onde fica o Deck Steakhouse?","acceptedAnswer":{"@type":"Answer","text":"Na R. José Prado Alves, 1, bairro Félix Tomaz, em Jacobina, Bahia."}},{"@type":"Question","name":"Qual é o horário de funcionamento?","acceptedAnswer":{"@type":"Answer","text":"O Deck abre todos os dias, das 18h à meia-noite. As reservas são para horários entre 18h30 e 23h."}},{"@type":"Question","name":"Como faço para reservar uma mesa?","acceptedAnswer":{"@type":"Answer","text":"Pelo WhatsApp (74) 98871-2181 ou pelo formulário de reserva aqui no site, que já abre a conversa com a mensagem pronta."}},{"@type":"Question","name":"O restaurante tem espaço para crianças?","acceptedAnswer":{"@type":"Answer","text":"Sim. O Deck tem Espaço Kids no local e um Menu Kids com hambúrguer, massa e dobradilla."}},{"@type":"Question","name":"O que tem no cardápio?","acceptedAnswer":{"@type":"Answer","text":"Carnes como Picanha Grill, Bife Ancho, Baby Beef e Maminha Angus, a Ribbs BBQ, hambúrgueres smash, tacos, burritos, quesadillas, petiscos para dividir, saladas, sobremesas e drinks."}},{"@type":"Question","name":"Tem opção vegetariana?","acceptedAnswer":{"@type":"Answer","text":"Sim. Os tacos e burritos têm versão de brócolis, e há saladas e acompanhamentos sem carne."}},{"@type":"Question","name":"Dá para pedir online?","acceptedAnswer":{"@type":"Answer","text":"Sim. O cardápio online do Deck recebe pedidos, com os preços atualizados."}}]}]</script>
 <style>
 :root{
@@ -45,6 +45,7 @@ html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-
 body{margin:0;overflow-x:hidden;overflow-x:clip;background:var(--canvas);color:var(--text-primary);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;animation:pagein .9s var(--ease) both}
 @keyframes pagein{from{opacity:0}to{opacity:1}}
 img{display:block;max-width:100%;height:auto}
+picture{display:contents}
 a{color:inherit}
 h1,h2,h3,p,ul,ol,figure,blockquote{margin:0;padding:0}
 ul,ol{list-style:none}
@@ -177,7 +178,7 @@ section{position:relative}
 .cut .txt{grid-column:9 / span 4}
 .cut:nth-of-type(even) figure{grid-column:5 / span 8;order:2}
 .cut:nth-of-type(even) .txt{grid-column:1 / span 4;order:1}
-.cut .num{font-family:var(--display);font-weight:500;font-size:clamp(3.4rem,7vw,6.2rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(210,165,74,.6)}
+.cut .num{font-family:var(--display);font-weight:600;font-size:clamp(3.4rem,7vw,6.2rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(210,165,74,.6)}
 .cut h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1.5rem,2.6vw,2.3rem);line-height:1.12;margin:14px 0 14px}
 .cut p{color:var(--text-secondary);max-width:32ch}
 .cut .tag{display:inline-block;margin-top:20px;font-family:var(--display);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--cebola);padding-top:14px;border-top:1px solid var(--accent-muted)}
@@ -305,7 +306,7 @@ section{position:relative}
 .guia h2{font-size:clamp(1.7rem,3.6vw,3rem);margin:18px 0 26px}
 .faq details{border-top:1px solid var(--line)}
 .faq details:last-child{border-bottom:1px solid var(--line)}
-.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-weight:500;transition:color .3s var(--ease)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-weight:600;transition:color .3s var(--ease)}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";font-family:var(--display);font-size:1.3rem;color:var(--accent);transition:transform .4s var(--ease)}
 .faq details[open] summary::after{transform:rotate(45deg)}
@@ -396,7 +397,9 @@ footer small{color:var(--text-secondary);font-size:.84rem;line-height:1.7;text-a
 <header class="hero" id="topo">
   <div class="stage" id="stage">
     <picture aria-hidden="true">
+      <source media="(max-width: 720px)" type="image/webp" srcset="assets/hero-m.webp">
       <source media="(max-width: 720px)" srcset="assets/hero-m.jpg">
+      <source type="image/webp" srcset="assets/hero.webp">
       <img class="hero-img" id="heroImg" src="assets/hero.jpg" width="2560" height="1440" alt="" fetchpriority="high">
     </picture>
     <canvas class="embers" id="embers" aria-hidden="true"></canvas>
@@ -459,7 +462,7 @@ footer small{color:var(--text-secondary);font-size:.84rem;line-height:1.7;text-a
       </div>
 
       <article class="cut">
-        <figure><img src="assets/picanha.jpg" width="1600" height="1066" loading="lazy" alt="Picanha fatiada com crosta marcada e sal grosso, servida na chapa de ferro"></figure>
+        <figure><picture><source type="image/webp" srcset="assets/picanha-800.webp 800w, assets/picanha.webp 1600w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/picanha.jpg" width="1600" height="1066" loading="lazy" alt="Picanha fatiada com crosta marcada e sal grosso, servida na chapa de ferro"></picture></figure>
         <div class="txt">
           <span class="num" aria-hidden="true">I</span>
           <h3 class="rv">Picanha Grill</h3>
@@ -469,7 +472,7 @@ footer small{color:var(--text-secondary);font-size:.84rem;line-height:1.7;text-a
       </article>
 
       <article class="cut">
-        <figure><img src="assets/bife-ancho.jpg" width="1600" height="1066" loading="lazy" alt="Bife Ancho fatiado na chapa de ferro, com fritas e pão de alho ao fundo"></figure>
+        <figure><picture><source type="image/webp" srcset="assets/bife-ancho-800.webp 800w, assets/bife-ancho.webp 1600w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/bife-ancho.jpg" width="1600" height="1066" loading="lazy" alt="Bife Ancho fatiado na chapa de ferro, com fritas e pão de alho ao fundo"></picture></figure>
         <div class="txt">
           <span class="num" aria-hidden="true">II</span>
           <h3 class="rv">Bife Ancho</h3>
@@ -479,7 +482,7 @@ footer small{color:var(--text-secondary);font-size:.84rem;line-height:1.7;text-a
       </article>
 
       <article class="cut">
-        <figure><img src="assets/ribs.jpg" width="1600" height="1066" loading="lazy" alt="Costela coberta de molho barbecue com batata frita e cebola crocante"></figure>
+        <figure><picture><source type="image/webp" srcset="assets/ribs-800.webp 800w, assets/ribs.webp 1600w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/ribs.jpg" width="1600" height="1066" loading="lazy" alt="Costela coberta de molho barbecue com batata frita e cebola crocante"></picture></figure>
         <div class="txt">
           <span class="num" aria-hidden="true">III</span>
           <h3 class="rv">Ribbs barbecue</h3>
@@ -514,12 +517,12 @@ footer small{color:var(--text-secondary);font-size:.84rem;line-height:1.7;text-a
       <div class="rule rv" style="--d:1" aria-hidden="true"></div>
     </div>
     <ul class="rail" tabindex="0" aria-label="Pratos para dividir, role para o lado">
-      <li class="rv"><figure><img src="assets/nachos.jpg" width="1200" height="800" loading="lazy" alt="Nachos com chili beans, nacho cheese, sour cream, guacamole e jalapeño"></figure><h3>Nachos com Chilli Beans</h3><p>Tortillas chips com tempero mexicano cobertas de chili beans, nacho cheese, sour cream, guacamole, jalapeño e molho pico de gallo.</p></li>
-      <li class="rv" style="--d:1"><figure><img src="assets/pao-de-alho.jpg" width="1200" height="800" loading="lazy" alt="Pão de alho gratinado com queijo, marcado na grelha"></figure><h3>Pão de alho</h3><p>Marcado na grelha, com queijo gratinado por cima. Peça dois.</p></li>
-      <li class="rv" style="--d:2"><figure><img src="assets/cheeseburger.jpg" width="1200" height="800" loading="lazy" alt="Burger Deluxe com dois smash burgers, nacho cheese e bacon no pão brioche"></figure><h3>Deluxe</h3><p>Hambúrguer com dois smash burgers, nacho cheese, bacon crispy e cebola roxa no pão brioche.</p></li>
-      <li class="rv" style="--d:3"><figure><img src="assets/quesadilla.jpg" width="1200" height="800" loading="lazy" alt="Quesadilla tostada cortada em fatias com molho agridoce"></figure><h3>Quesadilla</h3><p>Tortilha tostada na chapa, recheio derretido e molho agridoce com pimenta.</p></li>
-      <li class="rv" style="--d:4"><figure><img src="assets/fritas.jpg" width="1200" height="800" loading="lazy" alt="Batata frita rústica servida em cestinha de metal"></figure><h3>Fritas da casa</h3><p>Rústicas, douradas e temperadas. A cestinha chega cheia e volta vazia.</p></li>
-      <li class="rv" style="--d:3"><figure><img src="assets/burrito.jpg" width="1200" height="800" loading="lazy" alt="Burrito cortado ao meio com carne e queijo derretido"></figure><h3>Burrito</h3><p>Tortilha tostada, carne bem temperada e queijo que estica no primeiro corte.</p></li>
+      <li class="rv"><figure><picture><source type="image/webp" srcset="assets/nachos-800.webp 800w, assets/nachos.webp 1200w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/nachos.jpg" width="1200" height="800" loading="lazy" alt="Nachos com chili beans, nacho cheese, sour cream, guacamole e jalapeño"></picture></figure><h3>Nachos com Chilli Beans</h3><p>Tortillas chips com tempero mexicano cobertas de chili beans, nacho cheese, sour cream, guacamole, jalapeño e molho pico de gallo.</p></li>
+      <li class="rv" style="--d:1"><figure><picture><source type="image/webp" srcset="assets/pao-de-alho-800.webp 800w, assets/pao-de-alho.webp 1200w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/pao-de-alho.jpg" width="1200" height="800" loading="lazy" alt="Pão de alho gratinado com queijo, marcado na grelha"></picture></figure><h3>Pão de alho</h3><p>Marcado na grelha, com queijo gratinado por cima. Peça dois.</p></li>
+      <li class="rv" style="--d:2"><figure><picture><source type="image/webp" srcset="assets/cheeseburger-800.webp 800w, assets/cheeseburger.webp 1200w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/cheeseburger.jpg" width="1200" height="800" loading="lazy" alt="Burger Deluxe com dois smash burgers, nacho cheese e bacon no pão brioche"></picture></figure><h3>Deluxe</h3><p>Hambúrguer com dois smash burgers, nacho cheese, bacon crispy e cebola roxa no pão brioche.</p></li>
+      <li class="rv" style="--d:3"><figure><picture><source type="image/webp" srcset="assets/quesadilla-800.webp 800w, assets/quesadilla.webp 1200w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/quesadilla.jpg" width="1200" height="800" loading="lazy" alt="Quesadilla tostada cortada em fatias com molho agridoce"></picture></figure><h3>Quesadilla</h3><p>Tortilha tostada na chapa, recheio derretido e molho agridoce com pimenta.</p></li>
+      <li class="rv" style="--d:4"><figure><picture><source type="image/webp" srcset="assets/fritas-800.webp 800w, assets/fritas.webp 1200w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/fritas.jpg" width="1200" height="800" loading="lazy" alt="Batata frita rústica servida em cestinha de metal"></picture></figure><h3>Fritas da casa</h3><p>Rústicas, douradas e temperadas. A cestinha chega cheia e volta vazia.</p></li>
+      <li class="rv" style="--d:3"><figure><picture><source type="image/webp" srcset="assets/burrito-800.webp 800w, assets/burrito.webp 1200w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/burrito.jpg" width="1200" height="800" loading="lazy" alt="Burrito cortado ao meio com carne e queijo derretido"></picture></figure><h3>Burrito</h3><p>Tortilha tostada, carne bem temperada e queijo que estica no primeiro corte.</p></li>
     </ul>
   </section>
 
@@ -530,11 +533,11 @@ footer small{color:var(--text-secondary);font-size:.84rem;line-height:1.7;text-a
         <h2 class="display rv" style="--d:1" id="bar-t">Gelado, colorido e <em>sem pressa.</em></h2>
       </div>
       <ul class="drinks">
-        <li class="rv"><figure><img src="assets/gin-morango.jpg" width="900" height="1350" loading="lazy" alt="Gin com morango, hortelã e anis-estrelado em taça suada"><figcaption>Gin Tônica de Morango</figcaption></figure></li>
-        <li class="rv" style="--d:1"><figure><img src="assets/caipirinha.jpg" width="900" height="1350" loading="lazy" alt="Caipirinha de maracujá com pimenta dedo-de-moça na borda do copo"><figcaption>Caipirinha de Maracujá</figcaption></figure></li>
-        <li class="rv" style="--d:2"><figure><img src="assets/gin-tonica.jpg" width="900" height="1350" loading="lazy" alt="Gin tônica com limão siciliano, zimbro e alecrim"><figcaption>Gin tônica</figcaption></figure></li>
-        <li class="rv" style="--d:3"><figure><img src="assets/margarita.jpg" width="1000" height="1500" loading="lazy" alt="Blue Margarita com borda de sal"><figcaption>Blue Margarita</figcaption></figure></li>
-        <li class="rv" style="--d:4"><figure><img src="assets/milkshake.jpg" width="900" height="1350" loading="lazy" alt="Milkshake de chocolate com chantilly e pedaços de brownie"><figcaption>Milkshake de chocolate</figcaption></figure></li>
+        <li class="rv"><figure><picture><source type="image/webp" srcset="assets/gin-morango.webp 900w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/gin-morango.jpg" width="900" height="1350" loading="lazy" alt="Gin com morango, hortelã e anis-estrelado em taça suada"></picture><figcaption>Gin Tônica de Morango</figcaption></figure></li>
+        <li class="rv" style="--d:1"><figure><picture><source type="image/webp" srcset="assets/caipirinha.webp 900w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/caipirinha.jpg" width="900" height="1350" loading="lazy" alt="Caipirinha de maracujá com pimenta dedo-de-moça na borda do copo"></picture><figcaption>Caipirinha de Maracujá</figcaption></figure></li>
+        <li class="rv" style="--d:2"><figure><picture><source type="image/webp" srcset="assets/gin-tonica.webp 900w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/gin-tonica.jpg" width="900" height="1350" loading="lazy" alt="Gin tônica com limão siciliano, zimbro e alecrim"></picture><figcaption>Gin tônica</figcaption></figure></li>
+        <li class="rv" style="--d:3"><figure><picture><source type="image/webp" srcset="assets/margarita-800.webp 800w, assets/margarita.webp 1000w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/margarita.jpg" width="1000" height="1500" loading="lazy" alt="Blue Margarita com borda de sal"></picture><figcaption>Blue Margarita</figcaption></figure></li>
+        <li class="rv" style="--d:4"><figure><picture><source type="image/webp" srcset="assets/milkshake.webp 900w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/milkshake.jpg" width="900" height="1350" loading="lazy" alt="Milkshake de chocolate com chantilly e pedaços de brownie"></picture><figcaption>Milkshake de chocolate</figcaption></figure></li>
       </ul>
     </div>
   </section>
@@ -544,12 +547,12 @@ footer small{color:var(--text-secondary);font-size:.84rem;line-height:1.7;text-a
       <div class="left">
         <p class="eyebrow rv">Para ficar mais um pouco</p>
         <blockquote class="rv" style="--d:1" id="ficar-t">Pode ficar mais um pouco. A noite ainda tem <span>sobremesa.</span></blockquote>
-        <figure class="wide rv" style="--d:2"><img src="assets/brownie.jpg" width="1200" height="800" loading="lazy" alt="Brownie com sorvete, calda de chocolate, chantilly e morangos"><figcaption>Brownie com sorvete</figcaption></figure>
+        <figure class="wide rv" style="--d:2"><picture><source type="image/webp" srcset="assets/brownie-800.webp 800w, assets/brownie.webp 1200w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/brownie.jpg" width="1200" height="800" loading="lazy" alt="Brownie com sorvete, calda de chocolate, chantilly e morangos"></picture><figcaption>Brownie com sorvete</figcaption></figure>
       </div>
       <div class="sweets">
-        <figure class="wide rv"><img src="assets/churros.jpg" width="1200" height="800" loading="lazy" alt="Churros com açúcar e canela, com Nutella e doce de leite para mergulhar"><figcaption>Churros com Nutella e doce de leite</figcaption></figure>
-        <figure class="wide rv" style="--d:1"><img src="assets/cheesecake.jpg" width="1400" height="933" loading="lazy" alt="Fatia de cheesecake com calda de frutas vermelhas e morango"><figcaption>Cheesecake com calda de morango</figcaption></figure>
-        <figure class="wide rv" style="--d:2"><img src="assets/crepe.jpg" width="1200" height="800" loading="lazy" alt="Tortilla recheada de Nutella com sorvete e morangos"><figcaption>Tortilla de Nutella com Sorvete</figcaption></figure>
+        <figure class="wide rv"><picture><source type="image/webp" srcset="assets/churros-800.webp 800w, assets/churros.webp 1200w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/churros.jpg" width="1200" height="800" loading="lazy" alt="Churros com açúcar e canela, com Nutella e doce de leite para mergulhar"></picture><figcaption>Churros com Nutella e doce de leite</figcaption></figure>
+        <figure class="wide rv" style="--d:1"><picture><source type="image/webp" srcset="assets/cheesecake-800.webp 800w, assets/cheesecake.webp 1400w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/cheesecake.jpg" width="1400" height="933" loading="lazy" alt="Fatia de cheesecake com calda de frutas vermelhas e morango"></picture><figcaption>Cheesecake com calda de morango</figcaption></figure>
+        <figure class="wide rv" style="--d:2"><picture><source type="image/webp" srcset="assets/crepe-800.webp 800w, assets/crepe.webp 1200w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/crepe.jpg" width="1200" height="800" loading="lazy" alt="Tortilla recheada de Nutella com sorvete e morangos"></picture><figcaption>Tortilla de Nutella com Sorvete</figcaption></figure>
       </div>
     </div>
   </section>
@@ -589,10 +592,10 @@ footer small{color:var(--text-secondary);font-size:.84rem;line-height:1.7;text-a
       <span class="eyebrow rv" style="--d:1">A noite em Jacobina</span>
       <h2 class="display rv" style="--d:2">A melhor parte do jantar <em>é ficar.</em></h2>
       <div class="mosaic">
-        <figure class="m1 rv"><img src="assets/brinde.jpg" width="1800" height="1200" loading="lazy" alt="Quatro amigas brindando com chope e milkshake em uma mesa do Deck"></figure>
-        <figure class="m2 rv" style="--d:1"><img src="assets/familia.jpg" width="1400" height="933" loading="lazy" alt="Pai sorrindo para o filho pequeno, que segura uma batata frita"></figure>
-        <figure class="m3 rv" style="--d:2"><img src="assets/gente-churros.jpg" width="1400" height="933" loading="lazy" alt="Cliente sorrindo enquanto mergulha um churro no doce de leite"></figure>
-        <figure class="m4 rv" style="--d:3"><img src="assets/varanda.jpg" width="1400" height="933" loading="lazy" alt="Amigas conversando com drinks na varanda do Deck à noite"></figure>
+        <figure class="m1 rv"><picture><source type="image/webp" srcset="assets/brinde-800.webp 800w, assets/brinde.webp 1800w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/brinde.jpg" width="1800" height="1200" loading="lazy" alt="Quatro amigas brindando com chope e milkshake em uma mesa do Deck"></picture></figure>
+        <figure class="m2 rv" style="--d:1"><picture><source type="image/webp" srcset="assets/familia-800.webp 800w, assets/familia.webp 1400w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/familia.jpg" width="1400" height="933" loading="lazy" alt="Pai sorrindo para o filho pequeno, que segura uma batata frita"></picture></figure>
+        <figure class="m3 rv" style="--d:2"><picture><source type="image/webp" srcset="assets/gente-churros-800.webp 800w, assets/gente-churros.webp 1400w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/gente-churros.jpg" width="1400" height="933" loading="lazy" alt="Cliente sorrindo enquanto mergulha um churro no doce de leite"></picture></figure>
+        <figure class="m4 rv" style="--d:3"><picture><source type="image/webp" srcset="assets/varanda-800.webp 800w, assets/varanda.webp 1400w" sizes="(max-width: 860px) 92vw, 60vw"><img src="assets/varanda.jpg" width="1400" height="933" loading="lazy" alt="Amigas conversando com drinks na varanda do Deck à noite"></picture></figure>
       </div>
       <ul class="occ">
         <li class="rv"><h3>Em família</h3><p>Mesa grande, prato no meio e conversa que atravessa a sobremesa. Tem Espaço Kids para as crianças brincarem enquanto você aproveita.</p></li>

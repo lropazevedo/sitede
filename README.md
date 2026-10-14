@@ -15,6 +15,7 @@ Site estático em HTML, CSS e JavaScript puros, sem framework e sem etapa de bui
 | `deck-site/robots.txt`, `deck-site/sitemap.xml` | Arquivos para os buscadores. |
 | `gerar-paginas.js` | Gera as páginas internas a partir do cardápio. Rode de novo depois de mudar algo nele. |
 | `ver-site.js` | Mostra o site no seu computador antes de publicar. |
+| `otimizar-imagens.js` | Cria as versões WebP das fotos (tela cheia e 800px para celular) e aplica nas páginas. Precisa do ffmpeg. |
 
 ## Ver o site no computador
 
@@ -29,6 +30,8 @@ Abre em http://localhost:8090/. Deixe a janela aberta enquanto olha; Ctrl+C desl
 ```bash
 node gerar-paginas.js
 ```
+
+Ele já roda o `otimizar-imagens.js` no final. Se trocar ou adicionar uma foto em `deck-site/assets`, rode `node otimizar-imagens.js` para gerar o WebP dela.
 
 ## Publicar
 
